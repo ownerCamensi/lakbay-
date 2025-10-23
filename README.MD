@@ -1,8 +1,8 @@
 # 🚀 Lakbay Programming Language
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/yourusername/lakbay-lang)
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/ownerCamensi/lakbay-.git)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Platform](https://img.shields.io/badge/platform-Linux%20%7C%20macOS%20%7C%20Android-lightgrey.svg)](https://github.com/yourusername/lakbay-lang)
+[![Platform](https://img.shields.io/badge/platform-Linux%20%7C%20macOS%20%7C%20Android-lightgrey.svg)](https://github.com/ownerCamensi/lakbay-.git)
 
 **Lakbay** is a modern, object-oriented programming language that transpiles to C++ for high-performance execution.
 
@@ -25,7 +25,7 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/lakbay-lang.git
+git clone https://github.com/ownerCamensi/lakbay-.git
 cd lakbay-lang
 
 # Run the installer
@@ -56,7 +56,7 @@ pkg install clang python
 
 # Setup Lakbay
 cd ~
-git clone https://github.com/yourusername/lakbay-lang.git
+git clone https://github.com/ownerCamensi/lakbay-.git
 cd lakbay-lang
 chmod +x install.sh
 ./install.sh
@@ -251,7 +251,7 @@ python test_lakbay.py
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/lakbay-lang.git
+git clone https://github.com/ownerCamensi/lakbay-.git
 cd lakbay-lang
 
 # Run directly
@@ -280,8 +280,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Email: your.email@example.com
+- GitHub: [@ownerCamensi](https://github.com/ownerCamensi/lakbay-.git)
+- Email: mannycamensi2011@gmail.com
 
 ## 🗺️ Roadmap
 
