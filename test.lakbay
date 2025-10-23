@@ -1,0 +1,39 @@
+class Calculator {
+    public:
+    int result;
+    
+    func Calculator() {
+        result = 0;
+    }
+    
+    func add(int a, int b): int {
+        result = a + b;
+        return result;
+    }
+    
+    func multiply(int a, int b): int {
+        result = a * b;
+        return result;
+    }
+}
+
+class Person {
+    public:
+    string name;
+    int age;
+    
+    func Person() {
+        name = "Unknown";
+        age = 0;
+    }
+    
+    func setInfo(string n, int a): void {
+        name = n;
+        age = a;
+        return;
+    }
+    
+    func getAge(): int {
+        return age;
+    }
+}

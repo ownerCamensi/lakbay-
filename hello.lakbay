@@ -1,0 +1,355 @@
+// ===========================================
+// FILE: examples/hello.lakbay
+// Simple Hello World program
+// ===========================================
+
+class Greeter {
+    public:
+    string message;
+    
+    func Greeter() {
+        message = "Hello, Lakbay Programming Language!";
+    }
+    
+    func greet(): void {
+        return;
+    }
+    
+    func getMessage(): string {
+        return message;
+    }
+}
+
+// ===========================================
+// FILE: examples/calculator.lakbay
+// Basic calculator with arithmetic operations
+// ===========================================
+
+class Calculator {
+    public:
+    int result;
+    int lastOperation;
+    
+    func Calculator() {
+        result = 0;
+        lastOperation = 0;
+    }
+    
+    func add(int a, int b): int {
+        result = a + b;
+        lastOperation = 1;
+        return result;
+    }
+    
+    func subtract(int a, int b): int {
+        result = a - b;
+        lastOperation = 2;
+        return result;
+    }
+    
+    func multiply(int a, int b): int {
+        result = a * b;
+        lastOperation = 3;
+        return result;
+    }
+    
+    func divide(int a, int b): int {
+        if (b != 0) {
+            result = a / b;
+        } else {
+            result = 0;
+        }
+        lastOperation = 4;
+        return result;
+    }
+    
+    func getResult(): int {
+        return result;
+    }
+    
+    func clear(): void {
+        result = 0;
+        lastOperation = 0;
+        return;
+    }
+}
+
+// ===========================================
+// FILE: examples/bank.lakbay
+// Simple bank account management system
+// ===========================================
+
+class BankAccount {
+    public:
+    string accountNumber;
+    string ownerName;
+    float balance;
+    int transactionCount;
+    
+    func BankAccount(string accNum, string owner) {
+        accountNumber = accNum;
+        ownerName = owner;
+        balance = 0.0;
+        transactionCount = 0;
+    }
+    
+    func deposit(float amount): void {
+        if (amount > 0.0) {
+            balance = balance + amount;
+            transactionCount = transactionCount + 1;
+        }
+        return;
+    }
+    
+    func withdraw(float amount): bool {
+        if (amount > 0.0) {
+            if (balance >= amount) {
+                balance = balance - amount;
+                transactionCount = transactionCount + 1;
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    func getBalance(): float {
+        return balance;
+    }
+    
+    func getTransactionCount(): int {
+        return transactionCount;
+    }
+    
+    func getAccountInfo(): string {
+        return accountNumber;
+    }
+}
+
+class SavingsAccount extends BankAccount {
+    public:
+    float interestRate;
+    
+    func SavingsAccount(string accNum, string owner) {
+        accountNumber = accNum;
+        ownerName = owner;
+        balance = 0.0;
+        transactionCount = 0;
+        interestRate = 0.05;
+    }
+    
+    func applyInterest(): void {
+        float interest;
+        interest = balance * interestRate;
+        balance = balance + interest;
+        return;
+    }
+    
+    func setInterestRate(float rate): void {
+        if (rate >= 0.0) {
+            interestRate = rate;
+        }
+        return;
+    }
+}
+
+// ===========================================
+// FILE: examples/student.lakbay
+// Student management system
+// ===========================================
+
+class Student {
+    public:
+    string name;
+    int studentId;
+    float gpa;
+    int credits;
+    bool isEnrolled;
+    
+    func Student(string n, int id) {
+        name = n;
+        studentId = id;
+        gpa = 0.0;
+        credits = 0;
+        isEnrolled = true;
+    }
+    
+    func enrollCourse(int courseCredits): void {
+        if (isEnrolled) {
+            credits = credits + courseCredits;
+        }
+        return;
+    }
+    
+    func updateGPA(float newGPA): void {
+        if (newGPA >= 0.0) {
+            if (newGPA <= 4.0) {
+                gpa = newGPA;
+            }
+        }
+        return;
+    }
+    
+    func graduate(): void {
+        if (credits >= 120) {
+            isEnrolled = false;
+        }
+        return;
+    }
+    
+    func getInfo(): int {
+        return studentId;
+    }
+    
+    func canGraduate(): bool {
+        if (credits >= 120) {
+            if (gpa >= 2.0) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+
+class GraduateStudent extends Student {
+    public:
+    string thesisTitle;
+    bool thesisApproved;
+    
+    func GraduateStudent(string n, int id) {
+        name = n;
+        studentId = id;
+        gpa = 0.0;
+        credits = 0;
+        isEnrolled = true;
+        thesisTitle = "Untitled";
+        thesisApproved = false;
+    }
+    
+    func submitThesis(string title): void {
+        thesisTitle = title;
+        return;
+    }
+    
+    func approveThesis(): void {
+        thesisApproved = true;
+        return;
+    }
+}
+
+// ===========================================
+// FILE: examples/geometry.lakbay
+// Geometric shapes and calculations
+// ===========================================
+
+class Shape {
+    public:
+    string name;
+    float area;
+    
+    func Shape() {
+        name = "Generic Shape";
+        area = 0.0;
+    }
+    
+    func calculateArea(): float {
+        return area;
+    }
+    
+    func getName(): string {
+        return name;
+    }
+}
+
+class Rectangle extends Shape {
+    public:
+    float width;
+    float height;
+    
+    func Rectangle(float w, float h) {
+        name = "Rectangle";
+        width = w;
+        height = h;
+        area = 0.0;
+    }
+    
+    func calculateArea(): float {
+        area = width * height;
+        return area;
+    }
+    
+    func calculatePerimeter(): float {
+        float perimeter;
+        perimeter = 2.0 * (width + height);
+        return perimeter;
+    }
+}
+
+class Circle extends Shape {
+    public:
+    float radius;
+    
+    func Circle(float r) {
+        name = "Circle";
+        radius = r;
+        area = 0.0;
+    }
+    
+    func calculateArea(): float {
+        // Approximation: π ≈ 3.14159
+        area = 3.14159 * radius * radius;
+        return area;
+    }
+    
+    func calculateCircumference(): float {
+        float circumference;
+        circumference = 2.0 * 3.14159 * radius;
+        return circumference;
+    }
+}
+
+// ===========================================
+// FILE: examples/counter.lakbay
+// Simple counter with increment/decrement
+// ===========================================
+
+class Counter {
+    public:
+    int count;
+    int maxValue;
+    int minValue;
+    
+    func Counter() {
+        count = 0;
+        maxValue = 100;
+        minValue = 0;
+    }
+    
+    func increment(): void {
+        if (count < maxValue) {
+            count = count + 1;
+        }
+        return;
+    }
+    
+    func decrement(): void {
+        if (count > minValue) {
+            count = count - 1;
+        }
+        return;
+    }
+    
+    func reset(): void {
+        count = 0;
+        return;
+    }
+    
+    func setLimits(int min, int max): void {
+        minValue = min;
+        maxValue = max;
+        return;
+    }
+    
+    func getValue(): int {
+        return count;
+    }
+}
